@@ -3,7 +3,6 @@
 // make one debt object and just add/subtract from it 
 //delete object if debt == 0
 
-
 // declare variable as an instance of an express server
 const express = require('express');
 const app = express();
@@ -27,7 +26,9 @@ app.get("/debt/:id", (req, res) => {
     if (debt === undefined) {
         res.status(404).send("Debt not found");
     } else {
-        res.send(debt);
+        const debtArrayString = debtArray.join(', ');
+        res.send("your current debt balance is " + debtTotal + ". The following is every instance of debt ever: " + debtArrayString);
+
     }
 });
 app.get("/income/:id", (req, res) => {
@@ -37,9 +38,12 @@ app.get("/income/:id", (req, res) => {
     if (income === undefined) {
         res.status(404).send("Debt not found");
     } else {
-        res.send(income);
+        const incomeArrayString = incomeArray.join(', ');
+        res.send("your current debt balance is " + debtTotal + ". The following is every instance of Income ever: " + incomeArrayString);
+
     }
 });
+
 
 app.listen(
     PORT, 
@@ -49,15 +53,15 @@ app.listen(
 app.post('/debt/:id', (req, res) => { // creates a post request to allow the user to make new data on the server using a dynamic url
     const {id} = req.params; // ID is given by request parameters, you request WHERE it should be stored
     const { amount } = req.body // amount given by body of request.
-    debtTotal = debtTotal + amount
     if (!id){
         res.status(418).send({ message: 'We need an ID to store data in'})
     }
+ debtTotal = debtTotal + parseInt(amount);
  debtArray.push(amount);
  debtObject[id] = amount;
 
     res.send({
-        debt: `your balance has decreased by ${amount} and debt is now ${debtTotal}`,
+        debt: `your debt balance has decreased by ${amount} and debt is now ${debtTotal}`,
     
     })
 
@@ -72,11 +76,11 @@ app.post('/income/:id', (req, res) => { // creates a post request to allow the u
     }
 
     incomeArray.push(amount);
-    debtTotal = debtTotal - amount
+    debtTotal = debtTotal - amount;
     incomeObject[id] = amount;
 
     res.send({
-        income: `your balance has increased by ${amount} and debt is now ${debtTotal}`,
+        income: `your debt balance has increased by ${amount} and debt is now ${debtTotal}`,
 
     })
 
