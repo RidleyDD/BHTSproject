@@ -58,7 +58,7 @@ app.post('/debt/:id', (req, res) => { // creates a post request to allow the use
 
     res.send({
         debt: `your balance has decreased by ${amount} and debt is now ${debtTotal}`,
-       
+    
     })
 
     
