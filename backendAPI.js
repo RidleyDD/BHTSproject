@@ -189,8 +189,8 @@ let totalSpent = sum2
 
 const newMoney = new moneyModel({
     totalMoney: totalEarned - totalSpent, // Example value
-    weeklyIncome: 500, // Example value
-    weeklySpending: 300, // Example value
+    weeklyIncome: 1000, // Example value
+    weeklySpending: 100, // Example value
     totalDebt: debtTotal // Example value
 });
 
