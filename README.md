@@ -4,6 +4,13 @@
 
 This repository contains the backend and frontend files for the Fintrack webapp 
 
+Fintrack is budgeting done better! With more intuitive data visualization to ensure 
+you stay within the budgeting limits you set for yourself.
+
+The back end is comprised of express.js and node.js
+
+The front end is comprised of react
+
 > [!NOTE]
 > The following information is primarily intended for internal use of the app. Please be aware.
 
