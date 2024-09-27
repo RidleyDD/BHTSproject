@@ -1,6 +1,6 @@
 # FINTRACK
 
-[![LinkedIn](https://img.shields.io/badge/ColorStack%20at%20UW--Madison-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/angelmorales0/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/angelmorales0/)
 
 This repository contains the backend and frontend files for the Fintrack webapp 
 
